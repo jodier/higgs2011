@@ -66,7 +66,7 @@ void TLeptonAnalysis::fixeEnergy(void)
 
 			m_stacoSM->SetSeed(EventNumber, i);
 
-			if(mu_staco_isCombinedMuon->at(i) != false)
+			/**/ if(mu_staco_isCombinedMuon->at(i) != false)
 			{
 				m_stacoSM->Event(
 					pT_ME,
@@ -77,19 +77,7 @@ void TLeptonAnalysis::fixeEnergy(void)
 
 				pT_new = m_stacoSM->pTCB();
 			}
-
-			if(mu_staco_isSegmentTaggedMuon->at(i) != false)
-			{
-				m_stacoSM->Event(
-					pT_old,
-					mu_staco_eta->at(i),
-					"ID"
-				);
-
-				pT_new = m_stacoSM->pTID();
-			}
-
-			if(mu_staco_isStandAloneMuon->at(i) != false)
+			else if(mu_staco_isStandAloneMuon->at(i) != false)
 			{
 				m_stacoSM->Event(
 					pT_old,
@@ -98,6 +86,16 @@ void TLeptonAnalysis::fixeEnergy(void)
 				);
 
 				pT_new = m_stacoSM->pTMS();
+			}
+			else if(mu_staco_isSegmentTaggedMuon->at(i) != false)
+			{
+				m_stacoSM->Event(
+					pT_old,
+					mu_staco_eta->at(i),
+					"ID"
+				);
+
+				pT_new = m_stacoSM->pTID();
 			}
 
 			mu_staco_E->at(i) = (pT_new / pT_old) * mu_staco_E->at(i);
