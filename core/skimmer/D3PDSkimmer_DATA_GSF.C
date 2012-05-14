@@ -43,10 +43,9 @@ void D3PDSkimmer_DATA_GSF(void)
 
 	chain->SetBranchStatus("el_GSF_author", 1);
 	chain->SetBranchStatus("el_GSF_charge", 1);
+	chain->SetBranchStatus("el_GSF_etas2", 1);
 	chain->SetBranchStatus("el_GSF_cl_E", 1);
-	chain->SetBranchStatus("el_GSF_cl_E_uc", 1);
 	chain->SetBranchStatus("el_GSF_cl_eta", 1);
-	chain->SetBranchStatus("el_GSF_cl_eta_s2", 1);
 	chain->SetBranchStatus("el_GSF_cl_phi", 1);
 	chain->SetBranchStatus("el_GSF_cl_pt", 1);
 	chain->SetBranchStatus("el_GSF_EF_index", 1);
