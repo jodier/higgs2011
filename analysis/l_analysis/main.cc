@@ -39,6 +39,9 @@ extern Float_t getMassCut(Float_t H_mass);
 
 void TLeptonFinder::Loop(void)
 {
+	Int_t elStacoNr = 0;
+	Int_t muStacoNr = 0;
+
 	Int_t elStacoIndexNr;
 	Int_t muStacoIndexNr;
 
@@ -66,13 +69,6 @@ void TLeptonFinder::Loop(void)
 		}
 
 		fixeEnergy();
-
-		/*---------------------------------------------------------*/
-		/* INIT							   */
-		/*---------------------------------------------------------*/	
-
-		elStacoIndexNr = 0;
-		muStacoIndexNr = 0;
 
 		/*---------------------------------------------------------*/
 		/* AT LEAST 3 PRIMARY TRACKS AND LAR ERROR		   */
@@ -109,6 +105,9 @@ void TLeptonFinder::Loop(void)
 		/* SELECTIONS						   */
 		/*---------------------------------------------------------*/
 
+		elStacoIndexNr = 0;
+		muStacoIndexNr = 0;
+
 		if((isOkElTrigger != false || isOkMuTrigger != false) && isOkVertex != false)
 		{
 			for(Int_t i = 0; i < mu_staco_n; i++)
@@ -118,6 +117,9 @@ void TLeptonFinder::Loop(void)
 					muStacoIndexArray[muStacoIndexNr] = i;
 					muStacoTypeArray[muStacoIndexNr] = TYPE_MUON_STACO;
 
+					if(isOkMuTrigger) {
+						muStacoNr++;
+					}
 					muStacoIndexNr++;
 				}
 			}
@@ -131,6 +133,9 @@ void TLeptonFinder::Loop(void)
 						elStacoIndexArray[elStacoIndexNr] = i;
 						elStacoTypeArray[elStacoIndexNr] = TYPE_ELECTRON;
 
+						if(isOkElTrigger) {
+							elStacoNr++;
+						}
 						elStacoIndexNr++;
 					}
 				}
@@ -298,16 +303,19 @@ void TLeptonFinder::Loop(void)
 
 		/*---------------------------------------------------------*/
 
-//		if(m_l[0].n >= 2
-//		   ||
-//		   m_l[1].n >= 2
-//		 ) {
+		if(elStacoIndexNr >= 2
+		   ||
+		   muStacoIndexNr >= 2
+		 ) {
 			m_tree1.Fill();
 			m_tree2.Fill();
-//		}
+		}
 
 		/*---------------------------------------------------------*/
 	}
+
+	std::cout << "elStacoNr: " << elStacoNr << "    " << std::endl;
+	std::cout << "muStacoNr: " << muStacoNr << "    " << std::endl;
 }
 
 /*-------------------------------------------------------------------------*/

@@ -97,7 +97,7 @@ void TLeptonAnalysis::fixeEnergy(void)
 					"MS"
 				);
 
-				pT_new = m_stacoSM->pTID();
+				pT_new = m_stacoSM->pTMS();
 			}
 
 			mu_staco_E->at(i) = (pT_new / pT_old) * mu_staco_E->at(i);
