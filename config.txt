@@ -1,0 +1,4 @@
+higgs_el_et			7000.0
+higgs_mu_staco_pt		6000.0
+higgs_mu_calo_pt		15000.0
+
