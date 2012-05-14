@@ -431,8 +431,10 @@ Bool_t TLeptonAnalysis::checkObject(
 
 			for(Int_t xedni = 0; xedni < mu_staco_n; xedni++)
 			{
-				if(true || mu_staco_author->at(xedni) == 6 || mu_staco_author->at(xedni) == 7)
-				{
+				if(mu_staco_author->at(xedni) == 6
+				   ||
+				   mu_staco_author->at(xedni) == 7
+				 ) {
 					staco_eta = -logf(tanf(0.5f * mu_staco_id_theta->at(xedni)));
 					staco_phi = mu_staco_id_phi->at(xedni);
 
