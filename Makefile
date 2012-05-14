@@ -39,7 +39,7 @@ ATLASLIBS = -L./tools \
 #############################################################################
 
 CXX           =g++
-CXXFLAGS      =-std=c++98 -g -O2 -fPIC -ansi -Wall -Wno-unused-but-set-variable $(ROOTCFLAGS) $(ATLASFLAGS)
+CXXFLAGS      =-std=c++98 -g -O2 -fPIC -ansi -Wall $(ROOTCFLAGS) $(ATLASFLAGS)
 
 LD            =g++
 LDFLAGS       =-g $(ROOTLDFLAGS) -L.
