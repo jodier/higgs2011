@@ -2,7 +2,7 @@ void D3PDSkimmer_MC_GSF(void)
 {
 	TChain *chain = new TChain("physics");
 
-	chain->Add("../../H130.root");
+	chain->Add("/quark1/tiouchi/mc11_7TeV.107653.AlpgenJimmyZeeNp3_pt20.merge.NTUP_HSG2.e835_s1299_s1300_r3043_r2993_p1054_tid00822488_00/NTUP_HSG2.00822488._000035.root.1");
 
 	/*-----------------------------------------------------------------*/
 

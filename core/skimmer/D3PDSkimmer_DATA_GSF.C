@@ -2,7 +2,7 @@ void D3PDSkimmer_DATA_GSF(void)
 {
 	TChain *chain = new TChain("physics");
 
-	chain->Add("??");
+	chain->Add("/quark1/tiouchi/data11_7TeV.00185856.physics_Egamma.merge.NTUP_HSG2.r2713_p705_p996_p997_tid786148_00/NTUP_HSG2.786148._000002.root.2");
 
 	/*-----------------------------------------------------------------*/
 
@@ -43,9 +43,10 @@ void D3PDSkimmer_DATA_GSF(void)
 
 	chain->SetBranchStatus("el_GSF_author", 1);
 	chain->SetBranchStatus("el_GSF_charge", 1);
-	chain->SetBranchStatus("el_GSF_etas2", 1);
 	chain->SetBranchStatus("el_GSF_cl_E", 1);
+	chain->SetBranchStatus("el_GSF_cl_E_uc", 1);
 	chain->SetBranchStatus("el_GSF_cl_eta", 1);
+	chain->SetBranchStatus("el_GSF_cl_eta_s2", 1);
 	chain->SetBranchStatus("el_GSF_cl_phi", 1);
 	chain->SetBranchStatus("el_GSF_cl_pt", 1);
 	chain->SetBranchStatus("el_GSF_EF_index", 1);
