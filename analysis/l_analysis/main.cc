@@ -94,6 +94,8 @@ void TLeptonFinder::Loop(void)
 #else
 		Bool_t isOkVertex = (nPV3 > 0) && (larError != 2);
 #endif
+
+
 		/*---------------------------------------------------------*/
 		/* TRIGGERS						   */
 		/*---------------------------------------------------------*/
@@ -102,7 +104,7 @@ void TLeptonFinder::Loop(void)
 		Bool_t isOkMuTrigger = getMuTrigger();
 
 		cout << "isOkElTrigger = " << getElTrigger() << endl;
-		cout << "RunNumber = " << RunNumber << endl;
+
 		/*---------------------------------------------------------*/
 		/* SELECTIONS						   */
 		/*---------------------------------------------------------*/
