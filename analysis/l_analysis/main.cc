@@ -101,6 +101,8 @@ void TLeptonFinder::Loop(void)
 		Bool_t isOkElTrigger = getElTrigger();
 		Bool_t isOkMuTrigger = getMuTrigger();
 
+		cout << "isOkElTrigger = " << getElTrigger() << endl;
+		cout << "RunNumber = " << RunNumber << endl;
 		/*---------------------------------------------------------*/
 		/* SELECTIONS						   */
 		/*---------------------------------------------------------*/

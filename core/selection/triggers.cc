@@ -107,10 +107,14 @@ UInt_t TLeptonAnalysis::getMuTrigger(void)
 	{
 		muTrigger = 0x00;
 #ifdef __IS_MC
+
+		cout << "step1" << endl;
 		/**/ if(RunNumber == 180164 // B-D
 			||
 			RunNumber == 183003 // E-H
 		 ) {
+
+			cout << "step2" << endl;
 			if(EF_mu18_MG) {
 				muTrigger |= (1 << 0);
 			}
@@ -120,6 +124,7 @@ UInt_t TLeptonAnalysis::getMuTrigger(void)
 		}
 		else if(RunNumber == 186169) // I-K
 		{
+			cout << "step3" << endl;
 			TRandom3 random3;
 
 			random3.SetSeed(mc_channel_number * EventNumber);
@@ -137,6 +142,7 @@ UInt_t TLeptonAnalysis::getMuTrigger(void)
 			}
 			else
 			{
+			cout << "step4" << endl;
 				if(EF_mu18_MG_medium) {
 					muTrigger |= (1 << 0);
 				}
@@ -147,6 +153,7 @@ UInt_t TLeptonAnalysis::getMuTrigger(void)
 		}
 		else if(RunNumber == 189751) // L-M
 		{
+			cout << "step5" << endl;
 			if(EF_mu18_MG_medium) {
 				muTrigger |= (1 << 0);
 			}
