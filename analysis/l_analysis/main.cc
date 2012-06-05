@@ -103,7 +103,7 @@ void TLeptonFinder::Loop(void)
 		Bool_t isOkElTrigger = getElTrigger();
 		Bool_t isOkMuTrigger = getMuTrigger();
 
-		std::cout << "RunNumber" << RunNumber << std::endl;
+		//std::cout << "RunNumber" << RunNumber << std::endl;
 
 		/*---------------------------------------------------------*/
 		/* SELECTIONS						   */

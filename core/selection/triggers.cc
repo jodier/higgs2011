@@ -207,6 +207,8 @@ UInt_t TLeptonAnalysis::triggerMatch(
 	TLorentzVector tlv1;
 	TLorentzVector tlv2;
 
+	char lumiPeriod = getlumiPeriod(RunNumber);
+
 	switch(type)
 	{
 		/*---------------------------------------------------------*/
