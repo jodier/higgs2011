@@ -27,6 +27,7 @@ public :
 
    // Declaration of leaf types
    Bool_t          EF_2e12T_medium;
+   Bool_t          EF_2e12Tvh_medium;
    Bool_t          EF_2e12_medium;
    Bool_t          EF_2e15_medium;
    Bool_t          EF_2mu10_loose;
@@ -35,6 +36,7 @@ public :
    Bool_t          EF_e20_medium;
    Bool_t          EF_e22_medium;
    Bool_t          EF_e22_medium1;
+   Bool_t          EF_e22vh_medium1;
    Bool_t          EF_mu10;
    Bool_t          EF_mu15_mu10_EFFS;
    Bool_t          EF_mu15_mu10_EFFS_medium;
@@ -268,6 +270,7 @@ public :
    std::vector<std::vector<int> > *trig_RoI_EF_e_egammaContainer_egamma_ElectronsStatus;
 
    // List of branches
+   TBranch        *b_EF_2e12Tvh_medium;   //!
    TBranch        *b_EF_2e12T_medium;   //!
    TBranch        *b_EF_2e12_medium;   //!
    TBranch        *b_EF_2e15_medium;   //!
@@ -277,6 +280,7 @@ public :
    TBranch        *b_EF_e20_medium;   //!
    TBranch        *b_EF_e22_medium;   //!
    TBranch        *b_EF_e22_medium1;   //!
+   TBranch        *b_EF_e22vh_medium1;   //!
    TBranch        *b_EF_mu10;   //!
    TBranch        *b_EF_mu15_mu10_EFFS;   //!
    TBranch        *b_EF_mu15_mu10_EFFS_medium;   //!
@@ -785,6 +789,7 @@ void THiggsD3PD::Init(TTree *tree)
    fCurrent = -1;
    fChain->SetMakeClass(1);
 
+   fChain->SetBranchAddress("EF_2e12Tvh_medium", &EF_2e12Tvh_medium, &b_EF_2e12Tvh_medium);
    fChain->SetBranchAddress("EF_2e12T_medium", &EF_2e12T_medium, &b_EF_2e12T_medium);
    fChain->SetBranchAddress("EF_2e12_medium", &EF_2e12_medium, &b_EF_2e12_medium);
    fChain->SetBranchAddress("EF_2e15_medium", &EF_2e15_medium, &b_EF_2e15_medium);
@@ -794,6 +799,7 @@ void THiggsD3PD::Init(TTree *tree)
    fChain->SetBranchAddress("EF_e20_medium", &EF_e20_medium, &b_EF_e20_medium);
    fChain->SetBranchAddress("EF_e22_medium", &EF_e22_medium, &b_EF_e22_medium);
    fChain->SetBranchAddress("EF_e22_medium1", &EF_e22_medium1, &b_EF_e22_medium1);
+   fChain->SetBranchAddress("EF_e22vh_medium1", &EF_e22vh_medium1, &b_EF_e22vh_medium1);
    fChain->SetBranchAddress("EF_mu10", &EF_mu10, &b_EF_mu10);
    fChain->SetBranchAddress("EF_mu15_mu10_EFFS", &EF_mu15_mu10_EFFS, &b_EF_mu15_mu10_EFFS);
    fChain->SetBranchAddress("EF_mu15_mu10_EFFS_medium", &EF_mu15_mu10_EFFS_medium, &b_EF_mu15_mu10_EFFS_medium);
