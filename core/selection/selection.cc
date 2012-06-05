@@ -9,6 +9,9 @@
 //#define mc_with_constant_term 1 // for MC11a,b',b
 #define mc_with_constant_term 0 // for MC11c
 
+#define year "2011"
+//#define year "2012"
+
 /*-------------------------------------------------------------------------*/
 
 void TLeptonAnalysis::fixeEnergy(void)
@@ -51,7 +54,7 @@ void TLeptonAnalysis::fixeEnergy(void)
 			el_cl_E->at(i) = el_cl_E->at(i) * m_energyRescaler->getSmearingCorrectionMeV(
 				el_cl_eta->at(i),
 				el_cl_E->at(i),
-				0, mc_with_constant_term, "2011"
+				0, mc_with_constant_term, year
 			);
 		}
 
