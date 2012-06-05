@@ -20,7 +20,7 @@ ATLASFLAGS = -DSTANDALONE \
 -I tools/ggFReweighting-00-00-08 \
 -I tools/HiggsZZ4lUtils-00-00-10 \
 -I tools/PileupReweighting-00-02-03 \
--I tools/TrigMuonEfficiency-00-01-18 \
+-I tools/TrigMuonEfficiency-00-01-22 \
 -I tools/egammaAnalysisUtils-00-03-04 \
 -I tools/MuonIsolationCorrection-00-08 \
 -I tools/MuonMomentumCorrections-00-05-03 \

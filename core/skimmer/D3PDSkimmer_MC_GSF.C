@@ -38,65 +38,65 @@ void D3PDSkimmer_MC_GSF(void)
 	chain->SetBranchStatus("mcevt_weight", 1);
 
 	/*-----------------------------------------------------------------*/
-	/* ELECTRONS GSF						   */
+	/* ELECTRONS							   */
 	/*-----------------------------------------------------------------*/
 
-	chain->SetBranchStatus("el_GSF_author", 1);
-	chain->SetBranchStatus("el_GSF_charge", 1);
-	chain->SetBranchStatus("el_GSF_etas2", 1);
-	chain->SetBranchStatus("el_GSF_cl_E", 1);
-	chain->SetBranchStatus("el_GSF_cl_eta", 1);
-	chain->SetBranchStatus("el_GSF_cl_phi", 1);
-	chain->SetBranchStatus("el_GSF_cl_pt", 1);
-	chain->SetBranchStatus("el_GSF_EF_index", 1);
-	chain->SetBranchStatus("el_GSF_etap", 1);
-	chain->SetBranchStatus("el_GSF_etas2", 1);
-	chain->SetBranchStatus("el_GSF_Etcone20", 1);
-	chain->SetBranchStatus("el_GSF_Etcone30", 1);
-	chain->SetBranchStatus("el_GSF_loosePP", 1);
-	chain->SetBranchStatus("el_GSF_medium", 1);
-	chain->SetBranchStatus("el_GSF_n", 1);
-	chain->SetBranchStatus("el_GSF_nPixHits", 1);
-	chain->SetBranchStatus("el_GSF_nSCTHits", 1);
-	chain->SetBranchStatus("el_GSF_OQ", 1);
-	chain->SetBranchStatus("el_GSF_type", 1);
-	chain->SetBranchStatus("el_GSF_typebkg", 1);
-	chain->SetBranchStatus("el_GSF_origin", 1);
-	chain->SetBranchStatus("el_GSF_originbkg", 1);
-	chain->SetBranchStatus("el_GSF_ptcone20", 1);
-	chain->SetBranchStatus("el_GSF_ptcone30", 1);
-	chain->SetBranchStatus("el_GSF_tight", 1);
-	chain->SetBranchStatus("el_GSF_trackd0", 1);
-	chain->SetBranchStatus("el_GSF_trackd0pvunbiased", 1);
-	chain->SetBranchStatus("el_GSF_tracketa", 1);
-	chain->SetBranchStatus("el_GSF_trackphi", 1);
-	chain->SetBranchStatus("el_GSF_trackpt", 1);
-	chain->SetBranchStatus("el_GSF_trackqoverp", 1);
-	chain->SetBranchStatus("el_GSF_tracksigd0pvunbiased", 1);
-	chain->SetBranchStatus("el_GSF_tracktheta", 1);
-	chain->SetBranchStatus("el_GSF_trackz0", 1);
-	chain->SetBranchStatus("el_GSF_trackz0pvunbiased", 1);
-	chain->SetBranchStatus("el_GSF_Ethad", 1);
-	chain->SetBranchStatus("el_GSF_Ethad1", 1);
-	chain->SetBranchStatus("el_GSF_reta", 1);
-	chain->SetBranchStatus("el_GSF_rphi", 1);
-	chain->SetBranchStatus("el_GSF_weta2", 1);
-	chain->SetBranchStatus("el_GSF_f1", 1);
-	chain->SetBranchStatus("el_GSF_wstot", 1);
-	chain->SetBranchStatus("el_GSF_emaxs1", 1);
-	chain->SetBranchStatus("el_GSF_Emax2", 1);
-	chain->SetBranchStatus("el_GSF_deltaeta1", 1);
-	chain->SetBranchStatus("el_GSF_nBLHits", 1);
-	chain->SetBranchStatus("el_GSF_nBLayerOutliers", 1);
-	chain->SetBranchStatus("el_GSF_nSiHits", 1);
-	chain->SetBranchStatus("el_GSF_nPixelOutliers", 1);
-	chain->SetBranchStatus("el_GSF_nSCTOutliers", 1);
-	chain->SetBranchStatus("el_GSF_nTRTHits", 1);
-	chain->SetBranchStatus("el_GSF_nTRTOutliers", 1);
-	chain->SetBranchStatus("el_GSF_nTRTHighTHits", 1);
-	chain->SetBranchStatus("el_GSF_nTRTHighTOutliers", 1);
-	chain->SetBranchStatus("el_GSF_truth_mothertype", 1);
-	chain->SetBranchStatus("el_GSF_truth_type", 1);
+	chain->SetBranchStatus("el_author", 1);
+	chain->SetBranchStatus("el_charge", 1);
+	chain->SetBranchStatus("el_etas2", 1);
+	chain->SetBranchStatus("el_cl_E", 1);
+	chain->SetBranchStatus("el_cl_eta", 1);
+	chain->SetBranchStatus("el_cl_phi", 1);
+	chain->SetBranchStatus("el_cl_pt", 1);
+	chain->SetBranchStatus("el_EF_index", 1);
+	chain->SetBranchStatus("el_etap", 1);
+	chain->SetBranchStatus("el_etas2", 1);
+	chain->SetBranchStatus("el_Etcone20", 1);
+	chain->SetBranchStatus("el_Etcone30", 1);
+	chain->SetBranchStatus("el_loosePP", 1);
+	chain->SetBranchStatus("el_medium", 1);
+	chain->SetBranchStatus("el_n", 1);
+	chain->SetBranchStatus("el_nPixHits", 1);
+	chain->SetBranchStatus("el_nSCTHits", 1);
+	chain->SetBranchStatus("el_OQ", 1);
+	chain->SetBranchStatus("el_type", 1);
+	chain->SetBranchStatus("el_typebkg", 1);
+	chain->SetBranchStatus("el_origin", 1);
+	chain->SetBranchStatus("el_originbkg", 1);
+	chain->SetBranchStatus("el_ptcone20", 1);
+	chain->SetBranchStatus("el_ptcone30", 1);
+	chain->SetBranchStatus("el_tight", 1);
+	chain->SetBranchStatus("el_trackd0", 1);
+	chain->SetBranchStatus("el_trackd0pvunbiased", 1);
+	chain->SetBranchStatus("el_tracketa", 1);
+	chain->SetBranchStatus("el_trackphi", 1);
+	chain->SetBranchStatus("el_trackpt", 1);
+	chain->SetBranchStatus("el_trackqoverp", 1);
+	chain->SetBranchStatus("el_tracksigd0pvunbiased", 1);
+	chain->SetBranchStatus("el_tracktheta", 1);
+	chain->SetBranchStatus("el_trackz0", 1);
+	chain->SetBranchStatus("el_trackz0pvunbiased", 1);
+	chain->SetBranchStatus("el_Ethad", 1);
+	chain->SetBranchStatus("el_Ethad1", 1);
+	chain->SetBranchStatus("el_reta", 1);
+	chain->SetBranchStatus("el_rphi", 1);
+	chain->SetBranchStatus("el_weta2", 1);
+	chain->SetBranchStatus("el_f1", 1);
+	chain->SetBranchStatus("el_wstot", 1);
+	chain->SetBranchStatus("el_emaxs1", 1);
+	chain->SetBranchStatus("el_Emax2", 1);
+	chain->SetBranchStatus("el_deltaeta1", 1);
+	chain->SetBranchStatus("el_nBLHits", 1);
+	chain->SetBranchStatus("el_nBLayerOutliers", 1);
+	chain->SetBranchStatus("el_nSiHits", 1);
+	chain->SetBranchStatus("el_nPixelOutliers", 1);
+	chain->SetBranchStatus("el_nSCTOutliers", 1);
+	chain->SetBranchStatus("el_nTRTHits", 1);
+	chain->SetBranchStatus("el_nTRTOutliers", 1);
+	chain->SetBranchStatus("el_nTRTHighTHits", 1);
+	chain->SetBranchStatus("el_nTRTHighTOutliers", 1);
+	chain->SetBranchStatus("el_truth_mothertype", 1);
+	chain->SetBranchStatus("el_truth_type", 1);
 
 	/*-----------------------------------------------------------------*/
 	/* MUONS STACO							   */
@@ -293,6 +293,8 @@ void D3PDSkimmer_MC_GSF(void)
 	chain->SetBranchStatus("trig_RoI_EF_mu_Muon_ROI");
 	chain->SetBranchStatus("trig_RoI_EF_mu_TrigMuonEFInfoContainer");
 	chain->SetBranchStatus("trig_RoI_EF_mu_TrigMuonEFInfoContainerStatus");
+	chain->SetBranchStatus("trig_RoI_EF_mu_TrigMuonEFInfoContainer_eMuonEFInfoStatus");
+	chain->SetBranchStatus("trig_RoI_EF_mu_TrigMuonEFInfoContainer_eMuonEFInfo");
 	chain->SetBranchStatus("trig_RoI_L2_mu_CombinedMuonFeature");
 	chain->SetBranchStatus("trig_RoI_L2_mu_CombinedMuonFeatureStatus");
 	chain->SetBranchStatus("trig_RoI_L2_mu_MuonFeature");
@@ -338,13 +340,13 @@ void D3PDSkimmer_MC_GSF(void)
 	system("sed -i -e \"s/vector/std::vector/g\" THiggsD3PD.h");
 	system("sed -i -e \"s/string/std::string/g\" THiggsD3PD.h");
 
-	system("sed -i -e \"s/*el_GSF/*el/g\" THiggsD3PD.h");
-	system("sed -i -e \"s/\\&el_GSF/\\&el/g\" THiggsD3PD.h");
+//	system("sed -i -e \"s/*el_GSF/*el/g\" THiggsD3PD.h");
+//	system("sed -i -e \"s/\\&el_GSF/\\&el/g\" THiggsD3PD.h");
 
-	system("sed -i -e \"s/*b_el_GSF/*b_el/g\" THiggsD3PD.h");
-	system("sed -i -e \"s/\\&b_el_GSF/\\&b_el/g\" THiggsD3PD.h");
+//	system("sed -i -e \"s/*b_el_GSF/*b_el/g\" THiggsD3PD.h");
+//	system("sed -i -e \"s/\\&b_el_GSF/\\&b_el/g\" THiggsD3PD.h");
 
-	system("sed -i -e \"s/   el_GSF/   el/g\" THiggsD3PD.h");
+//	system("sed -i -e \"s/   el_GSF/   el/g\" THiggsD3PD.h");
 
 	system("sed -i -e \"s/#include <TFile.h>/&\\n\\n#define __IS_MC/g\" THiggsD3PD.h");
 

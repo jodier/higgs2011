@@ -20,7 +20,7 @@ ATLASFLAGS    =\
 -I ggFReweighting-00-00-08 \
 -I HiggsZZ4lUtils-00-00-10 \
 -I PileupReweighting-00-02-03 \
--I TrigMuonEfficiency-00-01-18 \
+-I TrigMuonEfficiency-00-01-22 \
 -I egammaAnalysisUtils-00-03-04 \
 -I MuonIsolationCorrection-00-08 \
 -I MuonMomentumCorrections-00-05-03 \
@@ -50,11 +50,11 @@ OBJS3         =\
 PileupReweighting-00-02-03/Root/TPileupReweighting.o
 
 OBJS4         =\
-TrigMuonEfficiency-00-01-18/Root/ElectronTriggerMatching.o \
-TrigMuonEfficiency-00-01-18/Root/HSG3TrigLeptonSFTool.o \
-TrigMuonEfficiency-00-01-18/Root/LeptonTriggerSF.o \
-TrigMuonEfficiency-00-01-18/Root/MuonHypothesis.o \
-TrigMuonEfficiency-00-01-18/Root/MuonTriggerMatching.o
+TrigMuonEfficiency-00-01-22/Root/ElectronTriggerMatching.o \
+TrigMuonEfficiency-00-01-22/Root/HSG3TrigLeptonSFTool.o \
+TrigMuonEfficiency-00-01-22/Root/LeptonTriggerSF.o \
+TrigMuonEfficiency-00-01-22/Root/MuonHypothesis.o \
+TrigMuonEfficiency-00-01-22/Root/MuonTriggerMatching.o
 
 OBJS5         =\
 egammaAnalysisUtils-00-03-04/Root/CaloIsoCorrection.o \
