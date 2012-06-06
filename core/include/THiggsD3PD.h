@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////
 // This class has been automatically generated on
-// Tue Jun  5 13:40:17 2012 by ROOT version 5.32/00
+// Tue Jun  5 13:37:46 2012 by ROOT version 5.32/00
 // from TTree physics/physics
 // found on file: result.root
 //////////////////////////////////////////////////////////
@@ -12,11 +12,10 @@
 #include <TChain.h>
 #include <TFile.h>
 
-#define __IS_DATA
+#define __IS_MC
 
 // Header file for the classes stored in the TTree if any.
 #include <vector>
-
 
 // Fixed size dimensions of array or collections stored in the TTree if any.
 
@@ -26,16 +25,11 @@ public :
    Int_t           fCurrent; //!current Tree number in a TChain
 
    // Declaration of leaf types
-   Bool_t          EF_2e12T_medium;
    Bool_t          EF_2e12Tvh_medium;
    Bool_t          EF_2e12_medium;
-   Bool_t          EF_2e15_medium;
    Bool_t          EF_2mu10_loose;
    Bool_t          EF_e10_medium_mu10;
    Bool_t          EF_e10_medium_mu6;
-   Bool_t          EF_e20_medium;
-   Bool_t          EF_e22_medium;
-   Bool_t          EF_e22_medium1;
    Bool_t          EF_e22vh_medium1;
    Bool_t          EF_mu10;
    Bool_t          EF_mu15_mu10_EFFS;
@@ -54,11 +48,18 @@ public :
    UInt_t          lbn;
    Float_t         actualIntPerXing;
    Float_t         averageIntPerXing;
+   UInt_t          mc_channel_number;
    UInt_t          larError;
    Int_t           el_n;
    std::vector<float>   *el_charge;
    std::vector<int>     *el_author;
    std::vector<unsigned int> *el_OQ;
+   std::vector<int>     *el_type;
+   std::vector<int>     *el_origin;
+   std::vector<int>     *el_typebkg;
+   std::vector<int>     *el_originbkg;
+   std::vector<int>     *el_truth_type;
+   std::vector<int>     *el_truth_mothertype;
    std::vector<int>     *el_medium;
    std::vector<int>     *el_tight;
    std::vector<int>     *el_loosePP;
@@ -146,6 +147,8 @@ public :
    std::vector<int>     *mu_muid_nMDTEOHits;
    std::vector<float>   *mu_muid_trackIPEstimate_d0_unbiasedpvunbiased;
    std::vector<float>   *mu_muid_trackIPEstimate_sigd0_unbiasedpvunbiased;
+   std::vector<int>     *mu_muid_truth_type;
+   std::vector<int>     *mu_muid_truth_mothertype;
    std::vector<int>     *mu_muid_EFCB_index;
    Int_t           mu_staco_n;
    std::vector<float>   *mu_staco_E;
@@ -189,6 +192,8 @@ public :
    std::vector<int>     *mu_staco_nMDTEOHits;
    std::vector<float>   *mu_staco_trackIPEstimate_d0_unbiasedpvunbiased;
    std::vector<float>   *mu_staco_trackIPEstimate_sigd0_unbiasedpvunbiased;
+   std::vector<int>     *mu_staco_truth_type;
+   std::vector<int>     *mu_staco_truth_mothertype;
    std::vector<int>     *mu_staco_EFCB_index;
    Int_t           mu_calo_n;
    std::vector<float>   *mu_calo_E;
@@ -233,8 +238,15 @@ public :
    std::vector<int>     *mu_calo_nMDTEOHits;
    std::vector<float>   *mu_calo_trackIPEstimate_d0_unbiasedpvunbiased;
    std::vector<float>   *mu_calo_trackIPEstimate_sigd0_unbiasedpvunbiased;
+   std::vector<int>     *mu_calo_truth_type;
+   std::vector<int>     *mu_calo_truth_mothertype;
    Int_t           vxp_n;
    std::vector<int>     *vxp_nTracks;
+   std::vector<std::vector<double> > *mcevt_weight;
+   Int_t           mc_n;
+   std::vector<int>     *mc_pdgId;
+   std::vector<std::vector<int> > *mc_children;
+   std::vector<std::vector<int> > *mc_child_index;
    UInt_t          trig_DB_SMK;
    std::vector<float>   *trig_L1_mu_eta;
    std::vector<float>   *trig_L1_mu_phi;
@@ -268,18 +280,18 @@ public :
    std::vector<float>   *trig_EF_el_phi;
    std::vector<std::vector<int> > *trig_RoI_EF_e_egammaContainer_egamma_Electrons;
    std::vector<std::vector<int> > *trig_RoI_EF_e_egammaContainer_egamma_ElectronsStatus;
+   Bool_t          EF_2e12T_medium;
+   Bool_t          EF_2e15_medium;
+   Bool_t          EF_e20_medium;
+   Bool_t          EF_e22_medium;
+   Bool_t          EF_e22_medium1;
 
    // List of branches
    TBranch        *b_EF_2e12Tvh_medium;   //!
-   TBranch        *b_EF_2e12T_medium;   //!
    TBranch        *b_EF_2e12_medium;   //!
-   TBranch        *b_EF_2e15_medium;   //!
    TBranch        *b_EF_2mu10_loose;   //!
    TBranch        *b_EF_e10_medium_mu10;   //!
    TBranch        *b_EF_e10_medium_mu6;   //!
-   TBranch        *b_EF_e20_medium;   //!
-   TBranch        *b_EF_e22_medium;   //!
-   TBranch        *b_EF_e22_medium1;   //!
    TBranch        *b_EF_e22vh_medium1;   //!
    TBranch        *b_EF_mu10;   //!
    TBranch        *b_EF_mu15_mu10_EFFS;   //!
@@ -298,11 +310,18 @@ public :
    TBranch        *b_lbn;   //!
    TBranch        *b_actualIntPerXing;   //!
    TBranch        *b_averageIntPerXing;   //!
+   TBranch        *b_mc_channel_number;   //!
    TBranch        *b_larError;   //!
    TBranch        *b_el_n;   //!
    TBranch        *b_el_charge;   //!
    TBranch        *b_el_author;   //!
    TBranch        *b_el_OQ;   //!
+   TBranch        *b_el_type;   //!
+   TBranch        *b_el_origin;   //!
+   TBranch        *b_el_typebkg;   //!
+   TBranch        *b_el_originbkg;   //!
+   TBranch        *b_el_truth_type;   //!
+   TBranch        *b_el_truth_mothertype;   //!
    TBranch        *b_el_medium;   //!
    TBranch        *b_el_tight;   //!
    TBranch        *b_el_loosePP;   //!
@@ -390,6 +409,8 @@ public :
    TBranch        *b_mu_muid_nMDTEOHits;   //!
    TBranch        *b_mu_muid_trackIPEstimate_d0_unbiasedpvunbiased;   //!
    TBranch        *b_mu_muid_trackIPEstimate_sigd0_unbiasedpvunbiased;   //!
+   TBranch        *b_mu_muid_truth_type;   //!
+   TBranch        *b_mu_muid_truth_mothertype;   //!
    TBranch        *b_mu_muid_EFCB_index;   //!
    TBranch        *b_mu_staco_n;   //!
    TBranch        *b_mu_staco_E;   //!
@@ -433,6 +454,8 @@ public :
    TBranch        *b_mu_staco_nMDTEOHits;   //!
    TBranch        *b_mu_staco_trackIPEstimate_d0_unbiasedpvunbiased;   //!
    TBranch        *b_mu_staco_trackIPEstimate_sigd0_unbiasedpvunbiased;   //!
+   TBranch        *b_mu_staco_truth_type;   //!
+   TBranch        *b_mu_staco_truth_mothertype;   //!
    TBranch        *b_mu_staco_EFCB_index;   //!
    TBranch        *b_mu_calo_n;   //!
    TBranch        *b_mu_calo_E;   //!
@@ -477,8 +500,15 @@ public :
    TBranch        *b_mu_calo_nMDTEOHits;   //!
    TBranch        *b_mu_calo_trackIPEstimate_d0_unbiasedpvunbiased;   //!
    TBranch        *b_mu_calo_trackIPEstimate_sigd0_unbiasedpvunbiased;   //!
+   TBranch        *b_mu_calo_truth_type;   //!
+   TBranch        *b_mu_calo_truth_mothertype;   //!
    TBranch        *b_vxp_n;   //!
    TBranch        *b_vxp_nTracks;   //!
+   TBranch        *b_mcevt_weight;   //!
+   TBranch        *b_mc_n;   //!
+   TBranch        *b_mc_pdgId;   //!
+   TBranch        *b_mc_children;   //!
+   TBranch        *b_mc_child_index;   //!
    TBranch        *b_trig_DB_SMK;   //!
    TBranch        *b_trig_L1_mu_eta;   //!
    TBranch        *b_trig_L1_mu_phi;   //!
@@ -512,6 +542,11 @@ public :
    TBranch        *b_trig_EF_el_phi;   //!
    TBranch        *b_trig_RoI_EF_e_egammaContainer_egamma_Electrons;   //!
    TBranch        *b_trig_RoI_EF_e_egammaContainer_egamma_ElectronsStatus;   //!
+   TBranch        *b_EF_2e12T_medium;   //!
+   TBranch        *b_EF_2e15_medium;   //!
+   TBranch        *b_EF_e20_medium;   //!
+   TBranch        *b_EF_e22_medium;   //!
+   TBranch        *b_EF_e22_medium1;   //!
 
    THiggsD3PD(TTree *tree=0);
    virtual ~THiggsD3PD();
@@ -581,6 +616,12 @@ void THiggsD3PD::Init(TTree *tree)
    el_charge = 0;
    el_author = 0;
    el_OQ = 0;
+   el_type = 0;
+   el_origin = 0;
+   el_typebkg = 0;
+   el_originbkg = 0;
+   el_truth_type = 0;
+   el_truth_mothertype = 0;
    el_medium = 0;
    el_tight = 0;
    el_loosePP = 0;
@@ -667,6 +708,8 @@ void THiggsD3PD::Init(TTree *tree)
    mu_muid_nMDTEOHits = 0;
    mu_muid_trackIPEstimate_d0_unbiasedpvunbiased = 0;
    mu_muid_trackIPEstimate_sigd0_unbiasedpvunbiased = 0;
+   mu_muid_truth_type = 0;
+   mu_muid_truth_mothertype = 0;
    mu_muid_EFCB_index = 0;
    mu_staco_E = 0;
    mu_staco_pt = 0;
@@ -709,6 +752,8 @@ void THiggsD3PD::Init(TTree *tree)
    mu_staco_nMDTEOHits = 0;
    mu_staco_trackIPEstimate_d0_unbiasedpvunbiased = 0;
    mu_staco_trackIPEstimate_sigd0_unbiasedpvunbiased = 0;
+   mu_staco_truth_type = 0;
+   mu_staco_truth_mothertype = 0;
    mu_staco_EFCB_index = 0;
    mu_calo_E = 0;
    mu_calo_pt = 0;
@@ -752,7 +797,13 @@ void THiggsD3PD::Init(TTree *tree)
    mu_calo_nMDTEOHits = 0;
    mu_calo_trackIPEstimate_d0_unbiasedpvunbiased = 0;
    mu_calo_trackIPEstimate_sigd0_unbiasedpvunbiased = 0;
+   mu_calo_truth_type = 0;
+   mu_calo_truth_mothertype = 0;
    vxp_nTracks = 0;
+   mcevt_weight = 0;
+   mc_pdgId = 0;
+   mc_children = 0;
+   mc_child_index = 0;
    trig_L1_mu_eta = 0;
    trig_L1_mu_phi = 0;
    trig_L1_mu_thrName = 0;
@@ -790,15 +841,10 @@ void THiggsD3PD::Init(TTree *tree)
    fChain->SetMakeClass(1);
 
    fChain->SetBranchAddress("EF_2e12Tvh_medium", &EF_2e12Tvh_medium, &b_EF_2e12Tvh_medium);
-   fChain->SetBranchAddress("EF_2e12T_medium", &EF_2e12T_medium, &b_EF_2e12T_medium);
    fChain->SetBranchAddress("EF_2e12_medium", &EF_2e12_medium, &b_EF_2e12_medium);
-   fChain->SetBranchAddress("EF_2e15_medium", &EF_2e15_medium, &b_EF_2e15_medium);
    fChain->SetBranchAddress("EF_2mu10_loose", &EF_2mu10_loose, &b_EF_2mu10_loose);
    fChain->SetBranchAddress("EF_e10_medium_mu10", &EF_e10_medium_mu10, &b_EF_e10_medium_mu10);
    fChain->SetBranchAddress("EF_e10_medium_mu6", &EF_e10_medium_mu6, &b_EF_e10_medium_mu6);
-   fChain->SetBranchAddress("EF_e20_medium", &EF_e20_medium, &b_EF_e20_medium);
-   fChain->SetBranchAddress("EF_e22_medium", &EF_e22_medium, &b_EF_e22_medium);
-   fChain->SetBranchAddress("EF_e22_medium1", &EF_e22_medium1, &b_EF_e22_medium1);
    fChain->SetBranchAddress("EF_e22vh_medium1", &EF_e22vh_medium1, &b_EF_e22vh_medium1);
    fChain->SetBranchAddress("EF_mu10", &EF_mu10, &b_EF_mu10);
    fChain->SetBranchAddress("EF_mu15_mu10_EFFS", &EF_mu15_mu10_EFFS, &b_EF_mu15_mu10_EFFS);
@@ -817,11 +863,18 @@ void THiggsD3PD::Init(TTree *tree)
    fChain->SetBranchAddress("lbn", &lbn, &b_lbn);
    fChain->SetBranchAddress("actualIntPerXing", &actualIntPerXing, &b_actualIntPerXing);
    fChain->SetBranchAddress("averageIntPerXing", &averageIntPerXing, &b_averageIntPerXing);
+   fChain->SetBranchAddress("mc_channel_number", &mc_channel_number, &b_mc_channel_number);
    fChain->SetBranchAddress("larError", &larError, &b_larError);
    fChain->SetBranchAddress("el_n", &el_n, &b_el_n);
    fChain->SetBranchAddress("el_charge", &el_charge, &b_el_charge);
    fChain->SetBranchAddress("el_author", &el_author, &b_el_author);
    fChain->SetBranchAddress("el_OQ", &el_OQ, &b_el_OQ);
+   fChain->SetBranchAddress("el_type", &el_type, &b_el_type);
+   fChain->SetBranchAddress("el_origin", &el_origin, &b_el_origin);
+   fChain->SetBranchAddress("el_typebkg", &el_typebkg, &b_el_typebkg);
+   fChain->SetBranchAddress("el_originbkg", &el_originbkg, &b_el_originbkg);
+   fChain->SetBranchAddress("el_truth_type", &el_truth_type, &b_el_truth_type);
+   fChain->SetBranchAddress("el_truth_mothertype", &el_truth_mothertype, &b_el_truth_mothertype);
    fChain->SetBranchAddress("el_medium", &el_medium, &b_el_medium);
    fChain->SetBranchAddress("el_tight", &el_tight, &b_el_tight);
    fChain->SetBranchAddress("el_loosePP", &el_loosePP, &b_el_loosePP);
@@ -909,6 +962,8 @@ void THiggsD3PD::Init(TTree *tree)
    fChain->SetBranchAddress("mu_muid_nMDTEOHits", &mu_muid_nMDTEOHits, &b_mu_muid_nMDTEOHits);
    fChain->SetBranchAddress("mu_muid_trackIPEstimate_d0_unbiasedpvunbiased", &mu_muid_trackIPEstimate_d0_unbiasedpvunbiased, &b_mu_muid_trackIPEstimate_d0_unbiasedpvunbiased);
    fChain->SetBranchAddress("mu_muid_trackIPEstimate_sigd0_unbiasedpvunbiased", &mu_muid_trackIPEstimate_sigd0_unbiasedpvunbiased, &b_mu_muid_trackIPEstimate_sigd0_unbiasedpvunbiased);
+   fChain->SetBranchAddress("mu_muid_truth_type", &mu_muid_truth_type, &b_mu_muid_truth_type);
+   fChain->SetBranchAddress("mu_muid_truth_mothertype", &mu_muid_truth_mothertype, &b_mu_muid_truth_mothertype);
    fChain->SetBranchAddress("mu_muid_EFCB_index", &mu_muid_EFCB_index, &b_mu_muid_EFCB_index);
    fChain->SetBranchAddress("mu_staco_n", &mu_staco_n, &b_mu_staco_n);
    fChain->SetBranchAddress("mu_staco_E", &mu_staco_E, &b_mu_staco_E);
@@ -952,6 +1007,8 @@ void THiggsD3PD::Init(TTree *tree)
    fChain->SetBranchAddress("mu_staco_nMDTEOHits", &mu_staco_nMDTEOHits, &b_mu_staco_nMDTEOHits);
    fChain->SetBranchAddress("mu_staco_trackIPEstimate_d0_unbiasedpvunbiased", &mu_staco_trackIPEstimate_d0_unbiasedpvunbiased, &b_mu_staco_trackIPEstimate_d0_unbiasedpvunbiased);
    fChain->SetBranchAddress("mu_staco_trackIPEstimate_sigd0_unbiasedpvunbiased", &mu_staco_trackIPEstimate_sigd0_unbiasedpvunbiased, &b_mu_staco_trackIPEstimate_sigd0_unbiasedpvunbiased);
+   fChain->SetBranchAddress("mu_staco_truth_type", &mu_staco_truth_type, &b_mu_staco_truth_type);
+   fChain->SetBranchAddress("mu_staco_truth_mothertype", &mu_staco_truth_mothertype, &b_mu_staco_truth_mothertype);
    fChain->SetBranchAddress("mu_staco_EFCB_index", &mu_staco_EFCB_index, &b_mu_staco_EFCB_index);
    fChain->SetBranchAddress("mu_calo_n", &mu_calo_n, &b_mu_calo_n);
    fChain->SetBranchAddress("mu_calo_E", &mu_calo_E, &b_mu_calo_E);
@@ -996,8 +1053,15 @@ void THiggsD3PD::Init(TTree *tree)
    fChain->SetBranchAddress("mu_calo_nMDTEOHits", &mu_calo_nMDTEOHits, &b_mu_calo_nMDTEOHits);
    fChain->SetBranchAddress("mu_calo_trackIPEstimate_d0_unbiasedpvunbiased", &mu_calo_trackIPEstimate_d0_unbiasedpvunbiased, &b_mu_calo_trackIPEstimate_d0_unbiasedpvunbiased);
    fChain->SetBranchAddress("mu_calo_trackIPEstimate_sigd0_unbiasedpvunbiased", &mu_calo_trackIPEstimate_sigd0_unbiasedpvunbiased, &b_mu_calo_trackIPEstimate_sigd0_unbiasedpvunbiased);
+   fChain->SetBranchAddress("mu_calo_truth_type", &mu_calo_truth_type, &b_mu_calo_truth_type);
+   fChain->SetBranchAddress("mu_calo_truth_mothertype", &mu_calo_truth_mothertype, &b_mu_calo_truth_mothertype);
    fChain->SetBranchAddress("vxp_n", &vxp_n, &b_vxp_n);
    fChain->SetBranchAddress("vxp_nTracks", &vxp_nTracks, &b_vxp_nTracks);
+   fChain->SetBranchAddress("mcevt_weight", &mcevt_weight, &b_mcevt_weight);
+   fChain->SetBranchAddress("mc_n", &mc_n, &b_mc_n);
+   fChain->SetBranchAddress("mc_pdgId", &mc_pdgId, &b_mc_pdgId);
+   fChain->SetBranchAddress("mc_children", &mc_children, &b_mc_children);
+   fChain->SetBranchAddress("mc_child_index", &mc_child_index, &b_mc_child_index);
    fChain->SetBranchAddress("trig_DB_SMK", &trig_DB_SMK, &b_trig_DB_SMK);
    fChain->SetBranchAddress("trig_L1_mu_eta", &trig_L1_mu_eta, &b_trig_L1_mu_eta);
    fChain->SetBranchAddress("trig_L1_mu_phi", &trig_L1_mu_phi, &b_trig_L1_mu_phi);
@@ -1031,6 +1095,11 @@ void THiggsD3PD::Init(TTree *tree)
    fChain->SetBranchAddress("trig_EF_el_phi", &trig_EF_el_phi, &b_trig_EF_el_phi);
    fChain->SetBranchAddress("trig_RoI_EF_e_egammaContainer_egamma_Electrons", &trig_RoI_EF_e_egammaContainer_egamma_Electrons, &b_trig_RoI_EF_e_egammaContainer_egamma_Electrons);
    fChain->SetBranchAddress("trig_RoI_EF_e_egammaContainer_egamma_ElectronsStatus", &trig_RoI_EF_e_egammaContainer_egamma_ElectronsStatus, &b_trig_RoI_EF_e_egammaContainer_egamma_ElectronsStatus);
+   fChain->SetBranchAddress("EF_2e12T_medium", &EF_2e12T_medium, &b_EF_2e12T_medium);
+   fChain->SetBranchAddress("EF_2e15_medium", &EF_2e15_medium, &b_EF_2e15_medium);
+   fChain->SetBranchAddress("EF_e20_medium", &EF_e20_medium, &b_EF_e20_medium);
+   fChain->SetBranchAddress("EF_e22_medium", &EF_e22_medium, &b_EF_e22_medium);
+   fChain->SetBranchAddress("EF_e22_medium1", &EF_e22_medium1, &b_EF_e22_medium1);
    Notify();
 }
 
