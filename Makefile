@@ -60,18 +60,18 @@ OBJS3         = analysis/l_analysis/main.o
 all: core $(OBJS2) $(OBJS3)
 #	@cd $(DIR)/tools && make all && cd $(DIR)
 
-	$(LD) $(LDFLAGS) -o test $(OBJS2) $(LIBS) -L. -lcore $(ATLASLIBS)
+	$(LD) $(LDFLAGS) -o test $(OBJS2) -lcore $(ATLASLIBS) $(LIBS)
 
-	$(LD) $(LDFLAGS) -o l_analysis $(OBJS3) $(LIBS) -L. -lcore $(ATLASLIBS)
+	$(LD) $(LDFLAGS) -o l_analysis $(OBJS3) -lcore $(ATLASLIBS) $(LIBS)
 
 #############################################################################
 
 ALL: core $(OBJS2) $(OBJS3)
 	@cd $(DIR)/tools && make all && cd $(DIR)
 
-	$(LD) $(LDFLAGS) -o test $(OBJS2) $(LIBS) -L. -lcore $(ATLASLIBS)
+	$(LD) $(LDFLAGS) -o test $(OBJS2) -lcore $(ATLASLIBS) $(LIBS)
 
-	$(LD) $(LDFLAGS) -o l_analysis $(OBJS3) $(LIBS) -L. -lcore $(ATLASLIBS)
+	$(LD) $(LDFLAGS) -o l_analysis $(OBJS3) -lcore $(ATLASLIBS) $(LIBS)
 
 #############################################################################
 

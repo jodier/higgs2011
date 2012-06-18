@@ -207,8 +207,6 @@ UInt_t TLeptonAnalysis::triggerMatch(
 	TLorentzVector tlv1;
 	TLorentzVector tlv2;
 
-	char lumiPeriod = getlumiPeriod(RunNumber);
-
 	switch(type)
 	{
 		/*---------------------------------------------------------*/
@@ -247,6 +245,7 @@ UInt_t TLeptonAnalysis::triggerMatch(
 				chain2 = "EF_2e12Tvh_medium";
 			}
 #else
+			char lumiPeriod = getlumiPeriod(RunNumber);
 
 			/**/ if(lumiPeriod >= 'B' && lumiPeriod <= 'J')
 			{
